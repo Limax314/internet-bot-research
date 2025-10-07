@@ -2,12 +2,12 @@
 import time
 
 """
-.. module:: bithumb_iota_krw_bot
+.. module:: bithumb_iota_krw_bot.py
+    :synopsis: Bithumb IOTA/KRW trading bot
 
-@remarks
-여기서부터 작업 예정
-
-https://www.mycompiler.io/view/JZ8KnKHgyKZ 업로드 예정
+Bithumb 거래소에서 여러 계정을 사용하여 IOTA/KRW 페어에 
+대해 지정된 수량만큼 시장가 매수 후 즉시 시장가 매도하는 
+스크립트입니다.
 """
 info = [
     {"apiKey": "", "secret": ""},
