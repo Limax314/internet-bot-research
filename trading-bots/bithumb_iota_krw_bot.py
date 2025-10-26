@@ -1,4 +1,9 @@
-﻿import ccxt
+﻿import ccxt  # 암호화폐 거래소 트레이딩 라이브러리
+
+"""
+@remarks
+여기서부터 주석 추가 예정
+"""
 import time
 
 """
@@ -16,10 +21,11 @@ info = [
     {"apiKey": "", "secret": ""},
     {"apiKey": "", "secret": ""},
     {"apiKey": "", "secret": ""},
-]
+]  # API 키와 시크릿을 포함하는 계정 정보
 
-ticker = "IOTA/KRW"
+ticker = "IOTA/KRW"  # 거래할 페어
 
+# 정의된 모든 계정에 대해 거래를 실행합니다.
 for i, account in enumerate(info):
     exchange = ccxt.bithumb(account)
 
