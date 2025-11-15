@@ -1,11 +1,10 @@
 ﻿import ccxt  # 암호화폐 거래소 트레이딩 라이브러리
+import time  # 시간 표준 라이브러리
 
 """
 @remarks
 여기서부터 주석 추가 예정
 """
-import time
-
 """
 .. module:: bithumb_iota_krw_bot.py
     :synopsis: Bithumb IOTA/KRW trading bot
