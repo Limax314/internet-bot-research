@@ -20,9 +20,6 @@ import time  # 시간 표준 라이브러리
     - `ticker` 변수에 거래를 원하는 거래 쌍을 설정합니다.
     - `amount` 변수에 거래할 수량을 지정합니다.
 """
-"""@remarks
-여기서부터 주석 추가 예정
-    """
 info = [
     {"apiKey": "", "secret": ""},
     {"apiKey": "", "secret": ""},
@@ -34,8 +31,12 @@ info = [
 
 ticker = "IOTA/KRW"  # 거래할 페어
 
-for i, account in enumerate(info):  # 정의된 모든 계정에 대해 거래를 실행합니다.
-    exchange = ccxt.bithumb(account)
+for i, account in enumerate(info):  # 정의된 모든 계정에 대해 거래를 실행
+    exchange = ccxt.bithumb(account)  # Bithumb 거래소 API 접속 객체
+
+    """@remarks
+여기서부터 주석 추가 예정
+    """
 
     exchange.load_markets()
 
