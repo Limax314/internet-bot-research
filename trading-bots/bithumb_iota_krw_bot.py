@@ -34,11 +34,11 @@ ticker = "IOTA/KRW"  # 거래할 페어
 for i, account in enumerate(info):  # 정의된 모든 계정에 대해 거래를 실행
     exchange = ccxt.bithumb(account)  # Bithumb 거래소 API 접속 객체
 
+    exchange.load_markets()  # 현재 시장가를 `current_price` 변수에 저장
+
     """@remarks
 여기서부터 주석 추가 예정
     """
-
-    exchange.load_markets()
 
     current_price = exchange.fetch_order_book(ticker, limit=1)["asks"][0][0]
     amount = 5000
