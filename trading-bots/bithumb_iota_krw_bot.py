@@ -36,11 +36,18 @@ for i, account in enumerate(info):  # 정의된 모든 계정에 대해 거래�
 
     exchange.load_markets()  # 현재 시장가를 `current_price` 변수에 저장
 
+    current_price = exchange.fetch_order_book(ticker, limit=1)["asks"][0][0]
+    """
+    .fetch_order_book: 거래소의 오더북(호가창)을 가져오는 메서드.
+    ticker: 거래 쌍을 나타내는 문자열.
+    limit=1: 가져올 오더북에서 가장 좋은 매수 호가/매도 호가 각각 1개만 추출.
+    ["asks"]: `.fetch_order_book` 메서드가 반환하는 딕셔너리에서 `asks` 키를 선택, 
+    `[가격, 수량]` 형식의 리스트를 요소로 갖는 리스트, 가격에 따라 오름차순 정렬.
+    """
+
     """@remarks
 여기서부터 주석 추가 예정
     """
-
-    current_price = exchange.fetch_order_book(ticker, limit=1)["asks"][0][0]
     amount = 5000
 
     exchange.create_order(ticker, type="market", side="buy", amount=amount)
